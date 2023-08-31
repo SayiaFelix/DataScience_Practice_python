@@ -43,11 +43,12 @@ def print_pattern(n=5):
     """
     # we need to run two for loops. Outer loop prints patterns line by line
     # where as inner loop print the content of that specific lines
+
     for i in range(n):
-        s = ''
+        p = ''
         for j in range(i + 1):
-            s = s + '*'
-        print(s)
+            p = p + '*'
+        print(p)
 
 
 # 3. Write a function called print_pattern that takes integer number as an argument and prints following pattern if
@@ -72,16 +73,16 @@ def calculate_area(dimension1, dimension2, shape="triangle"):
     :return: Area of a shape
     """
     if shape == "triangle":
-        area = 1 / 2 * (dimension1 * dimension2)
+        area1 = 1 / 2 * (dimension1 * dimension2)
         # Triangle area is : 1/2(Base*Height)
     elif shape == "rectangle":
-        area = dimension1 * dimension2
+        area1 = dimension1 * dimension2
         # Rectangle area is: Length*Width
     else:
         print("Error: Input shape is neither triangle nor rectangle.")
-        area = None
+        area1 = None
         # If user didn't supply "triangle" or "rectangle" as shape then return None
-    return area
+    return area1
 
 
 # 1. Write a function called calculate_area that takes base and height as an input and returns and area of a
@@ -190,7 +191,7 @@ exp[3] = exp[3] - 200
 print("Expenses after 200$ return in April:", exp)  # [2200, 2350, 2600, 1930, 2190, 1980]
 
 # 2. You have a list of your favourite marvel super heros
-# heros=['spider man','thor','hulk','iron man','captain america']
+# =['Spider-Man','thor','hulk','iron man','captain america']
 # Using this list
 
 heros = ['spider man', 'thor', 'hulk', 'iron man', 'captain america']
@@ -234,7 +235,7 @@ print(s[6:14])
 print(s[-3:])
 
 # 3. Create two variables to store how many fruits and vegetables you eat in a day.
-# Now Print "I eat x veggies and y fruits daily" where x and y presents vegetables and fruits that you eat everyday.
+# Now Print "I eat x veggies and y fruits daily" where x and y presents vegetables and fruits that you eat every day.
 # Use python f string for this.
 num_fruits = 10
 num_veggies = 5
@@ -262,7 +263,7 @@ width = 48.8
 area = length * width
 print("area of football field:", area)  # Ans: 4489.599999999999
 
-# 2. You bought 9 packets of potato chips from a store. Each packet costs 1.49 dollar
+# 2. You bought 9 packets of potato chips from a store. Each packet costs 1.49 dollar,
 #    and you gave shopkeeper 20 dollar.
 #    Find out using python, how many dollars is the shopkeeper going to give you back?
 num_packets = 9
