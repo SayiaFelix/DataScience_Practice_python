@@ -104,3 +104,19 @@ for i in range(1, 6):
     for j in range(i):
         s += '*'
     print(s)
+
+print("\n6\n")
+
+
+import random
+
+# Generate a random float between 0 and 1
+random_float = random.random()
+
+# Check if any digit in the random float is equal to 3
+if '3' in str(random_float):
+    print("I found a 3!")
+
+# Check if the random float is greater than 0.5
+if random_float > 0.5:
+    print(f"The square of this number is: {random_float**2}")

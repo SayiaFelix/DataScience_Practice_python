@@ -60,7 +60,7 @@ print_pattern(3)
 print("Print pattern with input=4")
 print_pattern(4)
 print("Print pattern with no input number")
-print_pattern()  # Not supplying any input will use default argument which is 5
+print_pattern()
 
 print("\n3\n")
 
