@@ -1,4 +1,50 @@
 import statistics
+import random
+import math
+import time
+import threading
+from threading import Thread
+
+
+# new
+
+# Generate random integers x and y in the range [-10, 10]
+x = random.randint(-10, 10)
+y = random.randint(-10, 10)
+
+# Calculate z based on the conditions
+if x < -5:
+    z = math.cos(2 * math.pi * y)
+elif -5 <= x < 0:
+    z = abs(x - y)
+elif 0 <= x < 5:
+    z = 2 - x ** 2 * y
+else:
+    z = math.e ** (-y) / (1 + x ** 2) ** 0.5
+
+# Print the values of x, y, and z
+print(f"x = {x}")
+print(f"y = {y}")
+print(f"z = {z}")
+
+# new
+user_input = input("Enter a number (float or int): ")
+
+try:
+    # Try to convert the input to both float and int
+    float_number = float(user_input)
+    int_number = int(float_number)  # Convert the float to an int if it's a whole number
+
+    # Check if it's a float or an int
+    if float_number == int_number:
+        print("Int!")
+        print(f"Number: {int_number}")
+    else:
+        print("Float!")
+        print(f"Number: {float_number}")
+
+except ValueError:
+    print("Invalid input. Please enter a valid number.")
 
 # Menu items and their prices
 menu = {
@@ -44,8 +90,6 @@ print(f"Quantity: {quantity}")
 print(f"Total bill: ${total_price}")
 
 
-
-
 stocks = {
     'info': [600, 630, 620],
     'ril': [1430, 1490, 1567],
@@ -82,3 +126,18 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# Create any multithreaded code using for loop for creating multithreads
+
+
+def sleepMe(xp):
+    print("Thread %xp will sleep." % xp)
+    time.sleep(5)
+    print("Thread %xp is awake" % xp)
+
+
+for i in range(10):
+    th = Thread(target=sleepMe, args=(i,))
+    th.start()
+    print("Current Threads: %i." % threading.active_count())

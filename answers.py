@@ -150,3 +150,96 @@ for n in next_square():
     if n > 100:
         break
     print(n)
+
+# Find average marks for the three subjects using command line input of marks.
+
+import argparse as arg
+
+if __name__ == "__main__":
+    parser = arg.ArgumentParser()
+    parser.add_argument("--physics", help="physics marks")
+    parser.add_argument("--chemistry", help="chemistry marks")
+    parser.add_argument("--maths", help="maths marks")
+
+    args = parser.parse_args()
+
+    print(args.physics)
+    print(args.chemistry)
+    print(args.maths)
+
+    # print("Result:", (
+    #         int(args.physics) + int(args.chemistry) + int(args.maths)
+    # ) / 3)
+
+    # python3 cmd.py --physics 60 --chemistry 70 --maths 90
+
+
+# Create a decorator function to check that the argument passed to the function factorial is a non-negative integer:
+# Create a factorial function which finds the factorial of a number.
+# Use the decorator to decorate the factorial function to only allow factorial of non-negative integers.
+def check(f):
+    def helper(t):
+        if type(t) == int and t > 0:
+            return f(t)
+        else:
+            raise Exception("Argument is not a non-negative integer")
+
+    return helper
+
+
+@check
+def factorial(p):
+    if p == 1:
+        return 1
+    else:
+        return p * factorial(p - 1)
+
+
+for i in range(1, 10):
+    print(i, factorial(i))
+
+try:
+    print(factorial(-1))
+except Exception as e:
+    e.print_exception()
+
+try:
+    print(factorial(1.354))
+except Exception as e:
+    e.print_exception()
+
+# Create a Dictionary which contains the Binary values mapping with numbers found in the below integer and binary and save it in binary_dict.
+# Dictionary
+integer = [0, 1, 2, 3, 4]
+binary = ["0", "1", "10", "11", "100"]
+
+z = zip(integer, binary)
+binary_dict = {integer: binary for integer, binary in z}
+
+print(binary_dict)
+
+# Create a List which contains additive inverse of a given integer list. An additive inverse a for an integer i is a number such that:
+integer = [1, -1, 2, 3, 5, 0, -7]
+additive_inverse = [-1 * i for i in integer]
+print(additive_inverse)
+
+# Create a set which only contains unique sqaures from a given a integer list.
+integer = [1, -1, 2, -2, 3, -3]
+sq_set = {i * i for i in integer}
+print(sq_set)
+
+# create any set anf try to use frozenset(setname)
+# Find the elements in a given set that are not in another set
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+print("Original sets:")
+print(set1)
+print(set2)
+print("Difference of set1 and set2 using difference():")
+print(set1.difference(set2))
+print("Difference of set2 and set1 using difference():")
+print(set2.difference(set1))
+print("Difference of set1 and set2 using - operator:")
+print(set1 - set2)
+print("Difference of set2 and set1 using - operator:")
+print(set2 - set1)
